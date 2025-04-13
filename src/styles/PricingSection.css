@@ -1,0 +1,138 @@
+.pricing-section {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-section::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.pricing-section::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.price-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.price-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.price-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(255, 0, 0, 0.15);
+}
+
+.price-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.price-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.price-card:hover .price-image img {
+  transform: scale(1.05);
+}
+
+.price-card h3 {
+  text-align: center;
+  padding: 20px 20px 10px;
+  font-size: 20px;
+  color: #333;
+  margin: 0;
+}
+
+.price-tag {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff0000;
+  padding: 0 20px 20px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.price-tag::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: #ff0000;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0 25px;
+  margin: 0 0 30px;
+}
+
+.features-list li {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
+.check-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  filter: invert(16%) sepia(100%) saturate(7404%) hue-rotate(0deg) brightness(100%) contrast(101%);
+}
+
+.price-btn {
+  display: block;
+  width: calc(100% - 50px);
+  margin: 0 auto 25px;
+  padding: 14px 0;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .pricing-section {
+    padding: 60px 20px;
+  }
+  
+  .price-cards {
+    grid-template-columns: 1fr;
+  }
+} 
