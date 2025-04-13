@@ -6,7 +6,6 @@ const Hero: React.FC = () => {
   const [count1, setCount1] = useState(0);
   const [count2, setCount2] = useState(0);
   const [count3, setCount3] = useState(0);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const heroRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   
@@ -71,8 +70,6 @@ const Hero: React.FC = () => {
         
         const x = (clientX / width - 0.5) * 20;
         const y = (clientY / height - 0.5) * 20;
-        
-        setMousePosition({ x, y });
         
         // Apply subtle 3D effect to content
         contentRef.current.style.transform = `perspective(1000px) rotateX(${-y * 0.05}deg) rotateY(${x * 0.05}deg) translateZ(10px)`;
