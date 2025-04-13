@@ -42,17 +42,17 @@ const Services: React.FC = () => {
     {
       title: 'Входные группы',
       price: '42000р.',
-      image: 'https://images.unsplash.com/photo-1541123437800-1bb1317badc2?q=80&w=600&auto=format&fit=crop'
+      image: 'https://st44.stpulscen.ru/images/product/238/347/773_original.jpg'
     },
     {
       title: 'Отделка балконов',
       price: '33000р.',
-      image: 'https://images.unsplash.com/photo-1622127922040-13cab637ee78?q=80&w=600&auto=format&fit=crop'
+      image: 'https://народные-балконы.рф/upload/information_system_19/1/7/1/item_171/information_items_171.jpg'
     },
     {
       title: 'Алюминевые конструкции',
       price: '60000р.',
-      image: 'https://images.unsplash.com/photo-1529307474719-3d0a417aaf8a?q=80&w=600&auto=format&fit=crop'
+      image: 'https://амет-групп-рт.рф/wp-content/uploads/2019/10/alum_konstr3.jpg'
     }
   ];
 

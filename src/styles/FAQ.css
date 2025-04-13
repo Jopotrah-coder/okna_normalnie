@@ -163,11 +163,11 @@
 }
 
 .faq-contact {
-  background: linear-gradient(135deg, #0066cc 0%, #4d96ff 100%);
+  background: linear-gradient(135deg, #ff0000 0%, #ffd700 100%);
   border-radius: 12px;
   padding: 30px;
   color: white;
-  box-shadow: 0 15px 40px rgba(0, 102, 204, 0.2);
+  box-shadow: 0 15px 40px rgba(255, 0, 0, 0.2);
   opacity: 0;
   transform: translateX(50px);
   animation: fadeInRight 0.8s ease 0.5s forwards;
@@ -185,8 +185,8 @@
 }
 
 .faq-contact .primary-btn {
-  background-color: white;
-  color: #0066cc;
+  background-color: #000000;
+  color: white;
   border: none;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
@@ -194,6 +194,7 @@
 .faq-contact .primary-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background-color: #333333;
 }
 
 @keyframes fadeInUp {

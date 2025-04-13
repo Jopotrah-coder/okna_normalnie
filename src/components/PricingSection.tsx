@@ -34,19 +34,19 @@ const PricingSection: React.FC = () => {
     {
       title: 'Двухстворчатое окно',
       price: 'от 25000 руб',
-      image: 'https://images.unsplash.com/photo-1578242874332-3bee63f2cfab?q=80&w=600&auto=format&fit=crop',
+      image: 'https://brest.alutech.by/upload/webp/resize_cache/f7a/400_400_1/f7acc07f17c74e48190121a62bb8d61d.webp',
       features: ['Профиль Rehau Blitz New', 'С установкой']
     },
     {
       title: 'Трёхстворчатое окно',
       price: 'от 33000 руб',
-      image: 'https://images.unsplash.com/photo-1511818742343-06c5b84c0798?q=80&w=600&auto=format&fit=crop',
+      image: 'https://studokna.ru/upload/iblock/f41/4.jpg',
       features: ['Профиль Rehau Blitz New', 'С установкой']
     },
     {
       title: 'Балконный блок',
       price: 'от 36200 руб',
-      image: 'https://images.unsplash.com/photo-1603825492572-3897b3de2e76?q=80&w=600&auto=format&fit=crop',
+      image: 'https://f-okna.kz/sites/default/files/field/image/balkonnyy_blok_chto_nuzhno_znat_pri_vybore.jpg',
       features: ['Профиль Rehau Blitz New', 'С установкой']
     }
   ];

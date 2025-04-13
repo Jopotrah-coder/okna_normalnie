@@ -37,13 +37,13 @@ const Gallery: React.FC = () => {
   
   const galleryItems = [
     {
-      image: 'https://images.unsplash.com/photo-1531109323667-75eabeed525f?q=80&w=600&auto=format&fit=crop',
+      image: 'https://www.vsngroup.ru/upload/medialibrary/36b/36bc8916dc00d9fbffbb15148c184ee3.jpg',
       title: 'Панорамное остекление',
       description: 'Современные панорамные окна с великолепным видом на город',
       category: 'residential'
     },
     {
-      image: 'https://images.unsplash.com/photo-1598815049455-262f008c5ccf?q=80&w=600&auto=format&fit=crop',
+      image: 'https://avrora-win.ru/wp-content/uploads/2017/02/vnutrennyaya-otdelka-balkona-min.jpeg',
       title: 'Отделка балкона',
       description: 'Полная отделка балкона с изящными деталями',
       category: 'balcony'

@@ -57,8 +57,6 @@ const CTA: React.FC = () => {
         </div>
       </div>
       
-      <div className="cta-shape top"></div>
-      <div className="cta-shape bottom"></div>
       <div className="cta-particles">
         {[...Array(10)].map((_, i) => (
           <div key={i} className="cta-particle"></div>

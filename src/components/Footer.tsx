@@ -4,7 +4,6 @@ import '../styles/Footer.css';
 const Footer: React.FC = () => {
   return (
     <footer className="footer">
-      <div className="footer-wave"></div>
       <div className="container footer-container">
         <div className="footer-info">
           <div className="footer-about">
