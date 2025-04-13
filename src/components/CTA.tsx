@@ -49,10 +49,9 @@ const CTA: React.FC = () => {
         </div>
         
         <div className="cta-badge">
-          <div className="badge-icon">%</div>
           <div className="badge-text">
-            <span className="badge-discount">-10%</span>
-            <span className="badge-desc">при заказе до конца месяца</span>
+            <span className="badge-discount">10%</span>
+            <span className="badge-desc">скидка до конца месяца</span>
           </div>
         </div>
       </div>
