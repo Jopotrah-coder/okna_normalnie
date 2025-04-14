@@ -20,73 +20,74 @@ const Header: React.FC = () => {
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
+    document.body.style.overflow = mobileMenuOpen ? 'auto' : 'hidden';
   };
 
   return (
-    <header className={`header ${scrolled ? 'scrolled' : ''}`}>
-      <div className="container header-container">
+    <header className={`header ${scrolled ? 'header-scrolled' : ''} ${mobileMenuOpen ? 'menu-open' : ''}`}>
+      <div className="header-container">
+        {/* Логотип */}
         <div className="logo">
-          <div className="logo-icon">
-            <img src="/images/logo.svg" alt="Центр Окон логотип" width="80" height="42" />
-          </div>
+          <a href="/" className="logo-link">
+            <div className="logo-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="2" stroke="#247EBA" strokeWidth="2"/>
+                <line x1="8" y1="2" x2="8" y2="22" stroke="#247EBA" strokeWidth="2"/>
+                <line x1="16" y1="2" x2="16" y2="22" stroke="#247EBA" strokeWidth="2"/>
+                <line x1="2" y1="8" x2="22" y2="8" stroke="#247EBA" strokeWidth="2"/>
+                <line x1="2" y1="16" x2="22" y2="16" stroke="#247EBA" strokeWidth="2"/>
+              </svg>
+            </div>
+            <div className="logo-text">ЦЕНТР ОКОН</div>
+          </a>
         </div>
-
+        
+        {/* Навигация */}
         <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
           <div className="nav-backdrop" onClick={toggleMobileMenu}></div>
-          <div className="nav-inner">
-            <button className="close-menu-btn" onClick={toggleMobileMenu}>
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-            <ul className="nav-list">
-              <li><a href="#services">Услуги</a></li>
-              <li><a href="#glazing">Стеклопакеты</a></li>
-              <li><a href="#pricing">Цены</a></li>
-              <li><a href="#gallery">Наши работы</a></li>
-              <li><a href="#map">Где нас найти</a></li>
-              <li><a href="#contact">Контакты</a></li>
-            </ul>
-          </div>
+          <ul className="nav-list">
+            <li><a href="#" className="nav-link">Окна</a></li>
+            <li><a href="#" className="nav-link">Балконы</a></li>
+            <li><a href="#" className="nav-link">Рассрочка</a></li>
+            <li><a href="#" className="nav-link">Дилерам</a></li>
+            <li><a href="#" className="nav-link">О нас</a></li>
+          </ul>
         </nav>
-
-        <div className="contact-info">
-          <div className="phone-numbers">
-            <a href="tel:+72128385" className="phone">
-              <svg className="phone-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14.5 6.5C15.2372 6.64382 15.9689 6.96892 16.5 7.5C17.0311 8.03108 17.3562 8.76284 17.5 9.5M15 3C16.5315 3.17014 17.9097 3.91107 19 5C20.0903 6.08893 20.8279 7.46869 21 9M20.9995 16.4767V19.1864C21.0037 20.2223 20.0723 21.0873 19.0265 20.9929C10.0001 21 3.00006 13.935 3.00713 4.96919C2.91294 3.92895 3.77725 3.00106 4.81286 3.00009H7.53253C7.96014 2.99577 8.37079 3.16298 8.65928 3.45979C9.45062 4.28572 9.97017 8.4 9.22881 9.1414C8.41769 9.9525 6.6709 9.0492 5.82144 9.76041C7.13307 13.1062 9.8879 15.8611 13.2337 17.1727C13.9427 16.3243 13.0461 14.5798 13.855 13.7709C14.5963 13.0295 18.7138 13.5496 19.5397 14.341C19.8373 14.6295 20.0051 15.0403 19.9995 15.4679C19.9995 15.4679 20.9995 16.4767 20.9995 16.4767Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        
+        {/* Контакты и кнопки */}
+        <div className="header-contacts">
+          <div className="social-icons">
+            <a href="#" className="social-icon telegram">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 5L9.218 10.083M22 5L14.128 21.231L9.218 10.083M22 5L3 11.4652L9.218 10.083" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              <span>212-83-85</span>
             </a>
-            <a href="tel:+74100288" className="phone">
-              <svg className="phone-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14.5 6.5C15.2372 6.64382 15.9689 6.96892 16.5 7.5C17.0311 8.03108 17.3562 8.76284 17.5 9.5M15 3C16.5315 3.17014 17.9097 3.91107 19 5C20.0903 6.08893 20.8279 7.46869 21 9M20.9995 16.4767V19.1864C21.0037 20.2223 20.0723 21.0873 19.0265 20.9929C10.0001 21 3.00006 13.935 3.00713 4.96919C2.91294 3.92895 3.77725 3.00106 4.81286 3.00009H7.53253C7.96014 2.99577 8.37079 3.16298 8.65928 3.45979C9.45062 4.28572 9.97017 8.4 9.22881 9.1414C8.41769 9.9525 6.6709 9.0492 5.82144 9.76041C7.13307 13.1062 9.8879 15.8611 13.2337 17.1727C13.9427 16.3243 13.0461 14.5798 13.855 13.7709C14.5963 13.0295 18.7138 13.5496 19.5397 14.341C19.8373 14.6295 20.0051 15.0403 19.9995 15.4679C19.9995 15.4679 20.9995 16.4767 20.9995 16.4767Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <a href="#" className="social-icon vk">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 12.5C2 8.5 2 6.5 3 5C4 3.5 6 2 12 2C18 2 20 3.5 21 5C22 6.5 22 8.5 22 12.5C22 16.5 22 18.5 21 20C20 21.5 18 22.5 12 22.5C6 22.5 4 21.5 3 20C2 18.5 2 16.5 2 12.5Z" stroke="currentColor" strokeWidth="1.5"/>
+                <path d="M7 9.5H8C9 9.5 9.5 10 10 11L10.5 11.5C11 12.5 11.5 13 12.5 13C13.5 13 14 12.5 14.5 11.5L15 11C15.5 10 16 9.5 17 9.5H17.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              <span>410-02-88</span>
-            </a>
-            <a href="tel:+79200068027" className="phone">
-              <svg className="phone-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14.5 6.5C15.2372 6.64382 15.9689 6.96892 16.5 7.5C17.0311 8.03108 17.3562 8.76284 17.5 9.5M15 3C16.5315 3.17014 17.9097 3.91107 19 5C20.0903 6.08893 20.8279 7.46869 21 9M20.9995 16.4767V19.1864C21.0037 20.2223 20.0723 21.0873 19.0265 20.9929C10.0001 21 3.00006 13.935 3.00713 4.96919C2.91294 3.92895 3.77725 3.00106 4.81286 3.00009H7.53253C7.96014 2.99577 8.37079 3.16298 8.65928 3.45979C9.45062 4.28572 9.97017 8.4 9.22881 9.1414C8.41769 9.9525 6.6709 9.0492 5.82144 9.76041C7.13307 13.1062 9.8879 15.8611 13.2337 17.1727C13.9427 16.3243 13.0461 14.5798 13.855 13.7709C14.5963 13.0295 18.7138 13.5496 19.5397 14.341C19.8373 14.6295 20.0051 15.0403 19.9995 15.4679C19.9995 15.4679 20.9995 16.4767 20.9995 16.4767Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span>+7(920)006-80-27</span>
             </a>
           </div>
-          <a href="tel:+79200068027" className="header-mobile-btn">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M14.5 6.5C15.2372 6.64382 15.9689 6.96892 16.5 7.5C17.0311 8.03108 17.3562 8.76284 17.5 9.5M15 3C16.5315 3.17014 17.9097 3.91107 19 5C20.0903 6.08893 20.8279 7.46869 21 9M20.9995 16.4767V19.1864C21.0037 20.2223 20.0723 21.0873 19.0265 20.9929C10.0001 21 3.00006 13.935 3.00713 4.96919C2.91294 3.92895 3.77725 3.00106 4.81286 3.00009H7.53253C7.96014 2.99577 8.37079 3.16298 8.65928 3.45979C9.45062 4.28572 9.97017 8.4 9.22881 9.1414C8.41769 9.9525 6.6709 9.0492 5.82144 9.76041C7.13307 13.1062 9.8879 15.8611 13.2337 17.1727C13.9427 16.3243 13.0461 14.5798 13.855 13.7709C14.5963 13.0295 18.7138 13.5496 19.5397 14.341C19.8373 14.6295 20.0051 15.0403 19.9995 15.4679C19.9995 15.4679 20.9995 16.4767 20.9995 16.4767Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </a>
-          <button className="call-btn">
-            <span>Заказать звонок</span>
-            <svg className="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
+          
+          <div className="phones">
+            <div className="phone">
+              <a href="tel:+72128385" className="phone-link">+7 212-83-85</a>
+            </div>
+            <div className="phone">
+              <a href="tel:+74100288" className="phone-link">+7 410-02-88</a>
+            </div>
+            <div className="phone-info">
+              <a href="tel:+79200068027" className="phone-link">+7 920-006-80-27</a>
+              <span className="work-hours">Пн-сб: 9:00 до 18:00</span>
+            </div>
+          </div>
+          
+          <a href="#" className="callback-btn">Бесплатный замер</a>
         </div>
-
-        <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
+        
+        {/* Мобильная кнопка меню */}
+        <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
           <span></span>
           <span></span>
           <span></span>

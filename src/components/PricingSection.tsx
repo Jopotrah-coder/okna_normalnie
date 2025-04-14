@@ -6,25 +6,41 @@ interface PriceCardProps {
   price: string;
   image: string;
   features: string[];
+  popular?: boolean;
 }
 
-const PriceCard: React.FC<PriceCardProps> = ({ title, price, image, features }) => {
+const PriceCard: React.FC<PriceCardProps> = ({ title, price, image, features, popular = false }) => {
   return (
-    <div className="price-card">
+    <div className={`price-card ${popular ? 'popular' : ''}`}>
+      {popular && <div className="popular-label">САМЫЙ ПОПУЛЯРНЫЙ</div>}
       <div className="price-image">
         <img src={image} alt={title} />
       </div>
-      <h3>{title}</h3>
-      <div className="price-tag">{price}</div>
-      <ul className="features-list">
+      <h3 className="price-card-title">{title}</h3>
+      <div className="price-card-price">от {price} ₽</div>
+      <ul className="price-card-features">
         {features.map((feature, index) => (
-          <li key={index}>
+          <li key={index} className="price-card-feature">
             <img src="https://cdn-icons-png.flaticon.com/512/2901/2901214.png" alt="check" className="check-icon" />
             {feature}
           </li>
         ))}
       </ul>
-      <button className="primary-btn price-btn">ОСТАВИТЬ ЗАЯВКУ</button>
+      <div className="price-card-buttons">
+        <button className="price-btn primary-btn">
+          <svg className="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 8.5L12 15.5L5 8.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          ЗАКАЗАТЬ ЗАМЕР
+        </button>
+        <button className="price-btn secondary-btn">
+          <svg className="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 19L19 12L11 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M19 12H5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          ПОДРОБНЕЕ
+        </button>
+      </div>
     </div>
   );
 };

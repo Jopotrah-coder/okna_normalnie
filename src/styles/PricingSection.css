@@ -117,14 +117,43 @@
   filter: invert(42%) sepia(85%) saturate(1119%) hue-rotate(182deg) brightness(86%) contrast(85%);
 }
 
+.price-card-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 25px 25px;
+}
+
 .price-btn {
-  display: block;
-  width: calc(100% - 50px);
-  margin: 0 auto 25px;
-  padding: 14px 0;
-  font-weight: 500;
-  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  font-weight: 600;
+  border-radius: 8px;
+  font-size: 14px;
   letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  border: 2px solid #247EBA;
+  color: #247EBA;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+  background-color: rgba(36, 126, 186, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  flex-shrink: 0;
 }
 
 @media (max-width: 768px) {

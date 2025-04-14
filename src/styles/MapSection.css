@@ -56,13 +56,57 @@
   background-color: #247EBA;
 }
 
-/* Стили для виджета 2GIS */
-.dg-widget-reviews {
+/* Стили для iframe с отзывами 2GIS */
+.reviews-iframe-container {
   flex: 1;
-  width: 100%;
-  min-height: 300px;
+  overflow: hidden;
   margin-bottom: 15px;
-  overflow-y: auto;
+  position: relative;
+  border-radius: 6px;
+  border: 1px solid #eee;
+}
+
+.reviews-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.review {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.review:last-of-type {
+  margin-bottom: 10px;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.reviewer-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.review-stars {
+  color: #FFC107;
+  letter-spacing: 2px;
+}
+
+.review p {
+  margin: 0;
+  color: #666;
+  line-height: 1.6;
+  font-size: 14px;
 }
 
 .review-link {
@@ -97,8 +141,9 @@
     max-height: 400px;
   }
   
-  .dg-widget-reviews {
-    min-height: 250px;
+  .reviews-iframe-container {
+    height: 300px;
+    position: relative;
   }
 }
 
@@ -119,7 +164,7 @@
     font-size: 18px;
   }
   
-  .dg-widget-reviews {
-    min-height: 200px;
+  .reviews-iframe-container {
+    height: 250px;
   }
 } 
