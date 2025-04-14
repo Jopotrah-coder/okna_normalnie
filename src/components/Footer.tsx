@@ -33,6 +33,7 @@ const Footer: React.FC = () => {
               <li><a href="#services">Услуги</a></li>
               <li><a href="#glazing">Стеклопакеты</a></li>
               <li><a href="#pricing">Цены</a></li>
+              <li><a href="#map">Где нас найти</a></li>
               <li><a href="#contact">Контакты</a></li>
             </ul>
           </div>

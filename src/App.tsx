@@ -11,6 +11,7 @@ import Testimonials from './components/Testimonials';
 import Gallery from './components/Gallery';
 import FAQ from './components/FAQ';
 import CTA from './components/CTA';
+import MapSection from './components/MapSection';
 import './styles/global.css';
 import './styles/App.css';
 
@@ -28,6 +29,7 @@ function App() {
       <FAQ />
       <CTA />
       <ContactForm />
+      <MapSection />
       <Footer />
     </div>
   );
