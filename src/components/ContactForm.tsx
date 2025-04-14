@@ -66,7 +66,11 @@ const ContactForm: React.FC = () => {
           </form>
           <div className="contact-info">
             <h3>Или позвоните нам</h3>
-            <a href="tel:+78312345678" className="contact-phone">+7 (831) 234-56-78</a>
+            <div className="phone-list">
+              <a href="tel:+72128385" className="contact-phone">212-83-85</a>
+              <a href="tel:+74100288" className="contact-phone">410-02-88</a>
+              <a href="tel:+79200068027" className="contact-phone">+7(920)006-80-27</a>
+            </div>
             <p>Мы работаем ежедневно с 9:00 до 20:00</p>
           </div>
         </div>

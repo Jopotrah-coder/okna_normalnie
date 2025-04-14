@@ -30,7 +30,7 @@
 
 .glazing-option:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 102, 204, 0.1);
+  box-shadow: 0 10px 25px rgba(36, 126, 186, 0.1);
 }
 
 .glazing-icon {
@@ -53,7 +53,7 @@
 .glazing-option h3 {
   font-size: 18px;
   margin-bottom: 15px;
-  color: #0066cc;
+  color: #247EBA;
   font-weight: 600;
 }
 
@@ -71,4 +71,32 @@
   .glazing-options {
     grid-template-columns: 1fr;
   }
+}
+
+.option-card {
+  padding: 25px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #F0F8FC, #FFFFFF);
+  box-shadow: 0 8px 20px rgba(36, 126, 186, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.option-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(36, 126, 186, 0.15);
+}
+
+.option-card h3 {
+  margin-top: 20px;
+  color: #247EBA;
+  font-size: 18px;
+  margin-bottom: 10px;
 } 

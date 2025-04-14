@@ -38,9 +38,15 @@ const Footer: React.FC = () => {
           </div>
           <div className="footer-contacts">
             <h3>Контакты</h3>
-            <p><span className="icon-location">📍</span> Адрес: г. Нижний Новгород, ул. Ларина, 15</p>
-            <p><span className="icon-phone">📞</span> Телефон: <a href="tel:+79101234567">+7 (910) 123-45-67</a></p>
-            <p><span className="icon-email">✉️</span> Email: <a href="mailto:info@okna-nn.ru">info@okna-nn.ru</a></p>
+            <p><span className="icon-location">📍</span> Адреса:</p>
+            <p className="address-item">г. Нижний Новгород, ул. Вединяпина, д6</p>
+            <p className="address-item">г. Нижний Новгород, проспект Ленина, д16</p>
+            <p className="address-item">г. Нижний Новгород, ул. Ю. Фучика, д60к1, офис 17</p>
+            <p><span className="icon-phone">📞</span> Телефоны:</p>
+            <p className="phone-item"><a href="tel:+72128385">212-83-85</a></p>
+            <p className="phone-item"><a href="tel:+74100288">410-02-88</a></p>
+            <p className="phone-item"><a href="tel:+79200068027">+7 (920) 006-80-27</a></p>
+            <p><span className="icon-email">✉️</span> Email: <a href="mailto:czentrokon@yandex.ru">czentrokon@yandex.ru</a></p>
             <p><span className="icon-time">🕒</span> Режим работы: Пн-Пт: 9:00-19:00, Сб: 10:00-16:00</p>
           </div>
         </div>

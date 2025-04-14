@@ -19,7 +19,7 @@
   position: absolute;
   width: 60px;
   height: 4px;
-  background: linear-gradient(90deg, #ff0000, #ffd700);
+  background: linear-gradient(90deg, #247EBA, #4D9DCB);
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
@@ -34,7 +34,7 @@
 }
 
 .primary-btn {
-  background: linear-gradient(90deg, #ff0000, #ffd700);
+  background: linear-gradient(90deg, #247EBA, #4D9DCB);
   color: white;
   border: none;
   padding: 12px 24px;
@@ -46,12 +46,12 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(36, 126, 186, 0.3);
 }
 
 .primary-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(255, 0, 0, 0.4);
+  box-shadow: 0 10px 20px rgba(36, 126, 186, 0.4);
 }
 
 .section-description {
@@ -61,4 +61,24 @@
   color: #666;
   font-size: 18px;
   line-height: 1.6;
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #247EBA, #4D9DCB);
+  box-shadow: 0 10px 20px rgba(36, 126, 186, 0.15);
+}
+
+.section-divider {
+  height: 3px;
+  width: 80px;
+  margin: 15px auto 20px;
+  background: linear-gradient(90deg, #247EBA, #4D9DCB);
+  border-radius: 3px;
 } 

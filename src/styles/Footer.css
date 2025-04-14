@@ -39,7 +39,7 @@
   font-size: 28px;
   margin: 0 0 10px;
   color: #fff;
-  background: linear-gradient(90deg, #fff, #ffd700);
+  background: linear-gradient(90deg, #fff, #4D9DCB);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -75,7 +75,7 @@
 }
 
 .social-icon:hover {
-  background-color: #ff0000;
+  background-color: #247EBA;
   transform: translateY(-3px);
 }
 
@@ -102,7 +102,7 @@
   bottom: 0;
   width: 40px;
   height: 2px;
-  background-color: #0066cc;
+  background-color: #247EBA;
 }
 
 .footer-links ul {
@@ -126,7 +126,7 @@
 
 .footer-links a:hover,
 .footer-contacts a:hover {
-  color: #0066cc;
+  color: #247EBA;
   transform: translateX(5px);
 }
 
@@ -135,6 +135,28 @@
   color: #ccc;
   display: flex;
   align-items: center;
+}
+
+.address-item {
+  margin: 0 0 10px;
+  color: #ccc;
+  padding-left: 28px;
+}
+
+.phone-item {
+  margin: 0 0 10px;
+  padding-left: 28px;
+}
+
+.phone-item a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: bold;
+}
+
+.phone-item a:hover {
+  color: #247EBA;
 }
 
 .footer-contacts i {
@@ -172,12 +194,25 @@
 }
 
 .copyright a {
-  color: #0066cc;
+  color: #247EBA;
   text-decoration: none;
 }
 
 .copyright a:hover {
   text-decoration: underline;
+}
+
+.footer-divider {
+  height: 2px;
+  width: 60px;
+  margin: 15px 0 20px;
+  background: linear-gradient(90deg, #fff, #4D9DCB);
+  border-radius: 2px;
+}
+
+.footer-social a:hover {
+  transform: translateY(-3px);
+  background-color: #247EBA;
 }
 
 @media (max-width: 992px) {
