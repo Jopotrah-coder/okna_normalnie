@@ -1,31 +1,32 @@
 /* Header styles */
 .header {
-  background-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  padding: 10px 0;
+  background-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  padding: 15px 0;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.03);
+  box-shadow: none;
   transition: all 0.3s ease;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: none;
 }
 
 .header-scrolled {
   padding: 8px 0;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(230, 230, 230, 0.6);
 }
 
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,12 +43,18 @@
   align-items: center;
   text-decoration: none;
   color: #247EBA;
+  transition: opacity 0.2s ease;
 }
 
-.logo-icon {
-  margin-right: 10px;
-  width: 32px;
-  height: 32px;
+.logo-link:hover {
+  opacity: 0.9;
+}
+
+.logo-image {
+  width: auto;
+  height: 38px;
+  margin-right: 12px;
+  object-fit: contain;
 }
 
 .logo-text {
@@ -55,7 +62,13 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.header-scrolled .logo-text {
   color: #247EBA;
+  text-shadow: none;
 }
 
 /* Navigation */
@@ -70,16 +83,36 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  gap: 25px;
+  gap: 28px;
 }
 
 .nav-link {
   font-size: 15px;
-  color: #333;
+  color: white;
   text-decoration: none;
   transition: color 0.3s ease;
   position: relative;
   font-weight: 500;
+  padding: 5px 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Особый стиль для первого пункта меню (Балконы) */
+.nav-list li:first-child .nav-link {
+  font-weight: 700;
+  font-size: 16px;
+  color: #247EBA;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.header-scrolled .nav-link {
+  color: #333;
+  text-shadow: none;
+}
+
+/* Сохраняем подсветку для пункта "Балконы" даже при прокрутке */
+.header-scrolled .nav-list li:first-child .nav-link {
+  color: #247EBA;
 }
 
 .nav-link:hover {
@@ -89,12 +122,18 @@
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -4px;
+  bottom: -2px;
   left: 0;
   width: 0;
   height: 2px;
   background-color: #247EBA;
   transition: width 0.3s ease;
+  border-radius: 1px;
+}
+
+/* Делаем подчеркивание для первого пункта меню (Балконы) немного толще */
+.nav-list li:first-child .nav-link::after {
+  height: 3px;
 }
 
 .nav-link:hover::after {
@@ -110,26 +149,65 @@
 
 .social-icons {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 
 .social-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
+  color: white;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.header-scrolled .social-icon {
   color: #247EBA;
-  transition: color 0.3s ease;
+  background-color: rgba(36, 126, 186, 0.08);
+}
+
+.social-icon.telegram {
+  color: white;
+  background-color: rgba(0, 136, 204, 0.2);
+}
+
+.social-icon.vk {
+  color: white;
+  background-color: rgba(76, 117, 163, 0.2);
+}
+
+.header-scrolled .social-icon.telegram {
+  color: #0088CC;
+  background-color: rgba(0, 136, 204, 0.08);
+}
+
+.header-scrolled .social-icon.vk {
+  color: #4C75A3;
+  background-color: rgba(76, 117, 163, 0.08);
 }
 
 .social-icon:hover {
-  color: #0056a9;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.social-icon.telegram:hover {
+  background-color: #0088CC;
+  box-shadow: 0 4px 8px rgba(0, 136, 204, 0.3);
+}
+
+.social-icon.vk:hover {
+  background-color: #4C75A3;
+  box-shadow: 0 4px 8px rgba(76, 117, 163, 0.3);
 }
 
 .social-icon svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 }
 
 .phones {
@@ -138,16 +216,45 @@
   align-items: flex-end;
 }
 
-.phone {
+.phone-group {
+  display: flex;
+  align-items: center;
   margin-bottom: 3px;
 }
 
+.phone-icon {
+  margin-right: 8px;
+  color: #247EBA;
+}
+
+.phone-numbers {
+  display: flex;
+  flex-direction: column;
+}
+
 .phone-link {
-  color: #333;
+  color: white;
   text-decoration: none;
   font-weight: 600;
   font-size: 14px;
   transition: color 0.3s ease;
+  display: block;
+  line-height: 1.3;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.header-scrolled .phone-link {
+  color: #333;
+  text-shadow: none;
+}
+
+.phone-link.mobile {
+  font-weight: 700;
+  color: #247EBA;
+}
+
+.header-scrolled .phone-link.mobile {
+  color: #247EBA;
 }
 
 .phone-link:hover {
@@ -162,24 +269,40 @@
 
 .work-hours {
   font-size: 11px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 2px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.header-scrolled .work-hours {
   color: #777;
+  text-shadow: none;
 }
 
 .callback-btn {
   display: inline-block;
-  padding: 8px 15px;
-  background-color: #247EBA;
+  padding: 10px 16px;
+  background-color: rgba(36, 126, 186, 0.85);
   color: white;
   text-decoration: none;
   font-size: 13px;
   font-weight: 600;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  border-radius: 6px;
+  transition: all 0.3s ease;
   white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(36, 126, 186, 0.3);
+  border: none;
+}
+
+.header-scrolled .callback-btn {
+  background-color: #247EBA;
+  box-shadow: 0 4px 6px rgba(36, 126, 186, 0.15);
 }
 
 .callback-btn:hover {
-  background-color: #0056a9;
+  background-color: #1b6ca0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(36, 126, 186, 0.2);
 }
 
 /* Mobile menu backdrop */
@@ -192,6 +315,12 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 998;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* Mobile menu toggle button */
@@ -205,14 +334,32 @@
   border: none;
   cursor: pointer;
   padding: 0;
+  z-index: 1000;
 }
 
 .mobile-menu-toggle span {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: #247EBA;
+  background-color: white;
   transition: 0.3s;
+  border-radius: 1px;
+}
+
+.header-scrolled .mobile-menu-toggle span {
+  background-color: #247EBA;
+}
+
+.menu-open .mobile-menu-toggle span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-open .mobile-menu-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-open .mobile-menu-toggle span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Responsive Styles */
@@ -241,7 +388,7 @@
 
   .nav-list {
     flex-direction: column;
-    gap: 15px;
+    gap: 18px;
   }
 
   .mobile-menu-toggle {
@@ -249,7 +396,7 @@
   }
 
   .header-contacts {
-    gap: 10px;
+    gap: 15px;
   }
 
   .social-icons {
@@ -269,6 +416,15 @@
   .logo-text {
     font-size: 16px;
   }
+
+  .callback-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .logo-image {
+    height: 32px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -277,7 +433,12 @@
   }
   
   .header-container {
-    padding: 0 10px;
+    padding: 0 15px;
+  }
+
+  .logo-image {
+    height: 28px;
+    margin-right: 0;
   }
 }
 

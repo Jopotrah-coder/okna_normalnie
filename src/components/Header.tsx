@@ -29,15 +29,7 @@ const Header: React.FC = () => {
         {/* Логотип */}
         <div className="logo">
           <a href="/" className="logo-link">
-            <div className="logo-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="2" width="20" height="20" rx="2" stroke="#247EBA" strokeWidth="2"/>
-                <line x1="8" y1="2" x2="8" y2="22" stroke="#247EBA" strokeWidth="2"/>
-                <line x1="16" y1="2" x2="16" y2="22" stroke="#247EBA" strokeWidth="2"/>
-                <line x1="2" y1="8" x2="22" y2="8" stroke="#247EBA" strokeWidth="2"/>
-                <line x1="2" y1="16" x2="22" y2="16" stroke="#247EBA" strokeWidth="2"/>
-              </svg>
-            </div>
+            <img src="/logo.png" alt="Центр Окон" className="logo-image" />
             <div className="logo-text">ЦЕНТР ОКОН</div>
           </a>
         </div>
@@ -46,8 +38,8 @@ const Header: React.FC = () => {
         <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
           <div className="nav-backdrop" onClick={toggleMobileMenu}></div>
           <ul className="nav-list">
-            <li><a href="#" className="nav-link">Окна</a></li>
             <li><a href="#" className="nav-link">Балконы</a></li>
+            <li><a href="#" className="nav-link">Окна</a></li>
             <li><a href="#" className="nav-link">Рассрочка</a></li>
             <li><a href="#" className="nav-link">Дилерам</a></li>
             <li><a href="#" className="nav-link">О нас</a></li>
@@ -57,28 +49,32 @@ const Header: React.FC = () => {
         {/* Контакты и кнопки */}
         <div className="header-contacts">
           <div className="social-icons">
-            <a href="#" className="social-icon telegram">
+            <a href="https://t.me/czentrokon" className="social-icon telegram" aria-label="Telegram">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22 5L9.218 10.083M22 5L14.128 21.231L9.218 10.083M22 5L3 11.4652L9.218 10.083" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M9.78 18.65L10.06 14.42L17.74 7.5C18.09 7.19 17.67 7.04 17.22 7.31L7.74 13.3L3.64 12C2.76 11.75 2.75 11.14 3.84 10.7L19.81 4.54C20.54 4.21 21.24 4.72 20.96 5.84L18.24 18.65C18.05 19.56 17.5 19.78 16.74 19.36L12.6 16.3L10.61 18.23C10.38 18.46 10.19 18.65 9.78 18.65Z" fill="currentColor"/>
               </svg>
             </a>
-            <a href="#" className="social-icon vk">
+            <a href="https://vk.com/czentrokon" className="social-icon vk" aria-label="VK">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 12.5C2 8.5 2 6.5 3 5C4 3.5 6 2 12 2C18 2 20 3.5 21 5C22 6.5 22 8.5 22 12.5C22 16.5 22 18.5 21 20C20 21.5 18 22.5 12 22.5C6 22.5 4 21.5 3 20C2 18.5 2 16.5 2 12.5Z" stroke="currentColor" strokeWidth="1.5"/>
-                <path d="M7 9.5H8C9 9.5 9.5 10 10 11L10.5 11.5C11 12.5 11.5 13 12.5 13C13.5 13 14 12.5 14.5 11.5L15 11C15.5 10 16 9.5 17 9.5H17.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M19.915 13.028c-.388-.49-.277-.708 0-1.146.005-.005 3.208-4.431 3.538-5.932l.002-.001c.164-.547 0-.949-.793-.949h-2.624c-.668 0-.976.345-1.141.731 0 0-1.336 3.198-3.226 5.271-.61.599-.892.791-1.225.791-.164 0-.419-.192-.419-.739V5.949c0-.656-.187-.949-.74-.949H9.161c-.419 0-.668.306-.668.591 0 .622.945.765 1.043 2.515v3.797c0 .832-.151.985-.486.985-.892 0-3.057-3.211-4.34-6.886-.259-.713-.512-1.001-1.185-1.001H.9c-.749 0-.9.345-.9.731 0 .682.892 4.073 4.148 8.553C6.318 17.343 9.374 19 12.154 19c1.671 0 1.875-.368 1.875-1.001 0-2.922-.151-3.198.686-3.198.388 0 1.056.192 2.616 1.667C19.114 18.217 19.407 19 20.405 19h2.625c.749 0 1.126-.368.909-1.094-.499-1.527-3.863-4.668-4.024-4.878z" fill="currentColor"/>
               </svg>
             </a>
           </div>
           
           <div className="phones">
-            <div className="phone">
-              <a href="tel:+72128385" className="phone-link">+7 212-83-85</a>
-            </div>
-            <div className="phone">
-              <a href="tel:+74100288" className="phone-link">+7 410-02-88</a>
+            <div className="phone-group">
+              <div className="phone-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 16.92V19.92C22 20.4704 21.7893 20.9996 21.4142 21.3747C21.0391 21.7498 20.5099 21.9605 19.96 21.96C16.4171 22.2531 12.9809 21.3348 10.06 19.36C7.35933 17.5556 5.09962 15.2959 3.295 12.595C1.31351 9.66507 0.394978 6.22029 0.686 2.67002C0.685664 2.12105 0.896496 1.59286 1.27135 1.21839C1.64621 0.843925 2.1748 0.632928 2.724 0.632982H5.724C6.72168 0.622539 7.56407 1.33571 7.727 2.32002C7.88324 3.40498 8.15544 4.47233 8.536 5.50002C8.81446 6.24322 8.69622 7.0696 8.224 7.70002L7.01 8.91402C8.67993 11.755 10.9392 14.0148 13.78 15.684L14.994 14.47C15.6244 13.9978 16.4508 13.8795 17.194 14.158C18.2217 14.5386 19.289 14.8108 20.374 14.967C21.372 15.1311 22.0873 15.9893 22.07 16.999L22 16.92Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <div className="phone-numbers">
+                <a href="tel:+72128385" className="phone-link">212-83-85</a>
+                <a href="tel:+74100288" className="phone-link">410-02-88</a>
+              </div>
             </div>
             <div className="phone-info">
-              <a href="tel:+79200068027" className="phone-link">+7 920-006-80-27</a>
+              <a href="tel:+79200068027" className="phone-link mobile">+7 920-006-80-27</a>
               <span className="work-hours">Пн-сб: 9:00 до 18:00</span>
             </div>
           </div>
@@ -87,7 +83,7 @@ const Header: React.FC = () => {
         </div>
         
         {/* Мобильная кнопка меню */}
-        <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+        <button className="mobile-menu-toggle" onClick={toggleMobileMenu} aria-label="Меню">
           <span></span>
           <span></span>
           <span></span>
@@ -97,4 +93,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header; 
+export default Header;

@@ -7,8 +7,6 @@ import GlazingOptions from './components/GlazingOptions';
 import PricingSection from './components/PricingSection';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
-import Testimonials from './components/Testimonials';
-import Gallery from './components/Gallery';
 import FAQ from './components/FAQ';
 import CTA from './components/CTA';
 import MapSection from './components/MapSection';
@@ -24,8 +22,6 @@ function App() {
       <Services />
       <GlazingOptions />
       <PricingSection />
-      <Gallery />
-      <Testimonials />
       <FAQ />
       <CTA />
       <ContactForm />
