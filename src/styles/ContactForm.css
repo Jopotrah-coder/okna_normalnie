@@ -103,4 +103,35 @@
   .contact-form-container {
     grid-template-columns: 1fr;
   }
+}
+
+.recaptcha-wrapper {
+  margin-bottom: 20px;
+}
+
+.form-error {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border-left: 4px solid #c62828;
+}
+
+.form-success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border-left: 4px solid #2e7d32;
+}
+
+.submit-btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 } 

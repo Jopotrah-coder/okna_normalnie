@@ -45,7 +45,7 @@ const BalconyShowcase: React.FC = () => {
         'Экономия на отоплении'
       ],
       price: 'от 28 000 ₽',
-      image: 'https://krovelbest.ru/800/600/https/sc02.alicdn.com/kf/HTB1XaOfXbr1gK0jSZFDq6z9yVXaB.jpg'
+      image: 'https://okna-almaz.com/wp-content/uploads/2018/03/Yteplenie-01.jpg'
     }
   ];
 

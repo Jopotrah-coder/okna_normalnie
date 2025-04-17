@@ -169,7 +169,14 @@
   gap: 10px;
 }
 
-.cta-submit-btn:hover {
+.cta-submit-btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.cta-submit-btn:hover:not(:disabled) {
   transform: translateY(-3px);
   box-shadow: 0 10px 30px rgba(36, 126, 186, 0.3);
 }
@@ -449,4 +456,31 @@
 .dark-cta {
   background: linear-gradient(135deg, #247EBA 0%, #1B5E8B 100%);
   padding: 60px 0;
+}
+
+/* reCAPTCHA styles */
+.recaptcha-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.form-error {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border-left: 4px solid #c62828;
+}
+
+.form-success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border-left: 4px solid #2e7d32;
 } 

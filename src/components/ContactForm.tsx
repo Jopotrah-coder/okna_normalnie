@@ -1,5 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/ContactForm.css';
+
+declare global {
+  interface Window {
+    grecaptcha: any;
+    onReCaptchaLoad?: () => void;
+  }
+}
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +14,31 @@ const ContactForm: React.FC = () => {
     phone: '',
     message: ''
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+
+  useEffect(() => {
+    // Load reCAPTCHA script
+    const script = document.createElement('script');
+    script.src = 'https://www.google.com/recaptcha/api.js?onload=onReCaptchaLoad&render=explicit';
+    script.async = true;
+    script.defer = true;
+    
+    window.onReCaptchaLoad = () => {
+      window.grecaptcha.render('recaptcha-container', {
+        'sitekey': '6LdGuu0pAAAAAF3Gvg9dGFQ5JOKgFQsOiX2z7MjJ'
+      });
+    };
+    
+    document.body.appendChild(script);
+    
+    return () => {
+      document.body.removeChild(script);
+      window.onReCaptchaLoad = undefined;
+    };
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -16,12 +48,49 @@ const ContactForm: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here would go the logic to send the form data to a server
-    console.log('Form submitted:', formData);
-    alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
-    setFormData({ name: '', phone: '', message: '' });
+    setIsSubmitting(true);
+    setSubmitError('');
+    
+    try {
+      const recaptchaResponse = window.grecaptcha.getResponse();
+      
+      if (!recaptchaResponse) {
+        throw new Error('Пожалуйста, подтвердите, что вы не робот');
+      }
+      
+      const formElement = e.target as HTMLFormElement;
+      const formDataToSend = new FormData(formElement);
+      
+      // Add hidden fields for PHP processing
+      formDataToSend.append('project_name', 'Центрокон НН');
+      formDataToSend.append('admin_email', 'czentrokon@yandex.ru');
+      formDataToSend.append('form_subject', 'Новая заявка с сайта');
+      formDataToSend.append('g-recaptcha-response', recaptchaResponse);
+      
+      const response = await fetch('/mail.php', {
+        method: 'POST',
+        body: formDataToSend
+      });
+      
+      if (!response.ok) {
+        throw new Error('Произошла ошибка при отправке. Попробуйте позже.');
+      }
+      
+      setSubmitSuccess(true);
+      setFormData({ name: '', phone: '', message: '' });
+      window.grecaptcha.reset();
+      
+      setTimeout(() => {
+        setSubmitSuccess(false);
+      }, 5000);
+      
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : 'Произошла ошибка');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -62,7 +131,21 @@ const ContactForm: React.FC = () => {
                 rows={4}
               ></textarea>
             </div>
-            <button type="submit" className="primary-btn submit-btn">Отправить заявку</button>
+            
+            <div className="form-group recaptcha-wrapper">
+              <div id="recaptcha-container"></div>
+            </div>
+            
+            {submitError && <div className="form-error">{submitError}</div>}
+            {submitSuccess && <div className="form-success">Спасибо за заявку! Мы свяжемся с вами в ближайшее время.</div>}
+            
+            <button 
+              type="submit" 
+              className="primary-btn submit-btn"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
+            </button>
           </form>
           <div className="contact-info">
             <h3>Или позвоните нам</h3>
