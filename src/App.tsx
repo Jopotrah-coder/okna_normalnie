@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import BalconyShowcase from './components/BalconyShowcase';
 import Benefits from './components/Benefits';
 import Services from './components/Services';
 import GlazingOptions from './components/GlazingOptions';
@@ -18,6 +19,7 @@ function App() {
     <div className="app">
       <Header />
       <Hero />
+      <BalconyShowcase />
       <Benefits />
       <Services />
       <GlazingOptions />
