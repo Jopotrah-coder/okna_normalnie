@@ -23,7 +23,6 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  margin-bottom: 60px;
 }
 
 .map-container {
@@ -32,101 +31,65 @@
   background-color: #eee;
 }
 
-/* Секция с отзывами */
-.reviews-section {
-  margin-top: 80px;
-  padding-top: 30px;
-  border-top: 1px solid #eee;
+/* Стили для всплывающих окон на карте */
+.map-popup {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 5px 0;
+  max-width: 300px;
 }
 
-.reviews-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-/* Стили для iframe с отзывами 2GIS */
-.reviews-iframe-container {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  border: 1px solid #eee;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  margin: 0 auto;
-}
-
-.reviews-iframe {
-  width: 100%;
-  height: 824px;
-  border: none;
+.map-popup strong {
+  font-size: 16px;
+  color: #247EBA;
+  margin-bottom: 5px;
   display: block;
 }
 
-/* Кнопки действий под отзывами */
-.reviews-actions {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
-  width: 100%;
-  max-width: 800px;
-}
-
-.review-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.map-popup a {
   color: #247EBA;
   text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  padding: 10px 20px;
-  border: 1px solid #247EBA;
-  border-radius: 30px;
 }
 
-.review-link:hover {
-  color: #ffffff;
+.map-popup a:hover {
+  text-decoration: underline;
+}
+
+.map-more-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
   background-color: #247EBA;
+  color: white !important;
+  border-radius: 4px;
+  text-decoration: none !important;
+  font-weight: 500;
+  transition: background-color 0.3s;
 }
 
-.review-link:hover svg {
-  color: #ffffff;
+.map-more-btn:hover {
+  background-color: #1d6394;
+  text-decoration: none !important;
 }
 
-.leave-review-btn {
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+/* Улучшаем стандартные стили 2GIS */
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.leaflet-popup-content {
+  margin: 12px 14px;
+}
+
+.leaflet-popup-tip {
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 992px) {
   .map-full-container {
     height: 400px;
-  }
-  
-  .reviews-iframe-container {
-    max-width: 100%;
-  }
-  
-  .reviews-iframe {
-    height: 700px;
-  }
-  
-  .reviews-actions {
-    flex-direction: column;
-    align-items: center;
-    max-width: 100%;
-  }
-  
-  .review-link, .leave-review-btn {
-    width: 100%;
-    justify-content: center;
   }
 }
 
@@ -140,14 +103,6 @@
     border-radius: 8px;
   }
   
-  .reviews-iframe-container {
-    border-radius: 8px;
-  }
-  
-  .reviews-iframe {
-    height: 600px;
-  }
-  
   .section-title {
     font-size: 22px;
   }
@@ -155,5 +110,14 @@
   .section-description {
     font-size: 14px;
     margin-bottom: 25px;
+  }
+  
+  .map-popup {
+    font-size: 13px;
+    max-width: 250px;
+  }
+  
+  .map-popup strong {
+    font-size: 15px;
   }
 } 
